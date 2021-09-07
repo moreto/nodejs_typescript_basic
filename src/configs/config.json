@@ -1,0 +1,13 @@
+{
+  "saltKey": "0007",
+  "expiresTime": "1h",
+  "emailContact": "mmoreto@gmail.com",
+
+  "showConsole": true,
+
+  "queryLog": true,
+  "queryResultLog": false,
+  "queryParametersLog": true,
+  "queryDetails": true,
+  "poolLog": true
+}

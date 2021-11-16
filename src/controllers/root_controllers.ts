@@ -9,20 +9,20 @@ class RootController {
   async root(request: Request, response: Response) {
     var pjson = require("../../package.json");
     let onLine = "";
-    let checkCn;
+    // let checkCn;
 
-    try {
-      const rootRepository = new RootRepository();
-      checkCn = await rootRepository.checkOnLine();
+    // try {
+    //   const rootRepository = new RootRepository();
+    //   checkCn = await rootRepository.checkOnLine();
 
-      if (checkCn != null) {
-        onLine = "OnLine :)";
-      } else {
-        onLine = "OffLine :(";
-      }
-    } catch (error) {
-      onLine = "OffLine :(   " + error;
-    }
+    //   if (checkCn != null) {
+    //     onLine = "OnLine :)";
+    //   } else {
+    //     onLine = "OffLine :(";
+    //   }
+    // } catch (error) {
+    //   onLine = "OffLine :(   " + error;
+    // }
 
     const log = {
       name: pjson.name,
@@ -31,7 +31,7 @@ class RootController {
       host: request.headers.host,
       email: Config.emailContact,
       dataBaseStatus: onLine,
-      database: checkCn.current_database,
+      // database: checkCn.current_database,
     };
     Log.print(log);
 

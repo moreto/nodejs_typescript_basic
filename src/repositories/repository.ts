@@ -1,7 +1,7 @@
 import pool from "../configs/db_config";
 import { Log } from "../commons/log";
 import * as Config from "../configs/config.json";
-import { ConvertRetornoModel, RetornoModel } from "../models/retorno_model";
+import { ConvertRetornoModel, RetornoModel } from "../models/retornoModel";
 import { rm } from "fs";
 
 export class Repository {
@@ -10,16 +10,7 @@ export class Repository {
   static async DbQueryList(query: { text: string; values: any }) {
     let client = await pool.connect();
     const result = await client.query(query);
-    Config.poolLog
-      ? Log.print(
-          "pool total.: " +
-            pool.totalCount +
-            ", idle.: " +
-            pool.idleCount +
-            ", waiting.: " +
-            pool.waitingCount
-        )
-      : null;
+    Config.poolLog ? Log.print("pool total.: " + pool.totalCount + ", idle.: " + pool.idleCount + ", waiting.: " + pool.waitingCount) : null;
     client.release();
     Config.queryLog ? Log.print(query.text) : null;
     Config.queryParametersLog ? Log.print(query.values) : null;
@@ -30,16 +21,7 @@ export class Repository {
   static async DbQueryObject(query: { text: string; values: any }) {
     let client = await pool.connect();
     const result = await client.query(query);
-    Config.poolLog
-      ? Log.print(
-          "pool total.: " +
-            pool.totalCount +
-            ", idle.: " +
-            pool.idleCount +
-            ", waiting.: " +
-            pool.waitingCount
-        )
-      : null;
+    Config.poolLog ? Log.print("pool total.: " + pool.totalCount + ", idle.: " + pool.idleCount + ", waiting.: " + pool.waitingCount) : null;
     client.release();
     Config.queryLog ? Log.print(query.text) : null;
     Config.queryParametersLog ? Log.print(query.values) : null;
@@ -50,16 +32,7 @@ export class Repository {
   static async DbQueryRowCount(query: { text: string; values: any }) {
     let client = await pool.connect();
     const result = await client.query(query);
-    Config.poolLog
-      ? Log.print(
-          "pool total.: " +
-            pool.totalCount +
-            ", idle.: " +
-            pool.idleCount +
-            ", waiting.: " +
-            pool.waitingCount
-        )
-      : null;
+    Config.poolLog ? Log.print("pool total.: " + pool.totalCount + ", idle.: " + pool.idleCount + ", waiting.: " + pool.waitingCount) : null;
     client.release();
     Config.queryLog ? Log.print(query.text) : null;
     Config.queryParametersLog ? Log.print(query.values) : null;
@@ -70,16 +43,7 @@ export class Repository {
   static async DbReturnBoolByCountQuery(query: { text: string; values: any }) {
     let client = await pool.connect();
     const result = await client.query(query);
-    Config.poolLog
-      ? Log.print(
-          "pool total.: " +
-            pool.totalCount +
-            ", idle.: " +
-            pool.idleCount +
-            ", waiting.: " +
-            pool.waitingCount
-        )
-      : null;
+    Config.poolLog ? Log.print("pool total.: " + pool.totalCount + ", idle.: " + pool.idleCount + ", waiting.: " + pool.waitingCount) : null;
     client.release();
     Config.queryLog ? Log.print(query.text) : null;
     Config.queryParametersLog ? Log.print(query.values) : null;
@@ -97,22 +61,11 @@ export class Repository {
   static async DbQueryListEncapsulated(query: { text: string; values: any }) {
     let client = await pool.connect();
     const result = await client.query(query);
-    Config.poolLog
-      ? Log.print(
-          "pool total.: " +
-            pool.totalCount +
-            ", idle.: " +
-            pool.idleCount +
-            ", waiting.: " +
-            pool.waitingCount
-        )
-      : null;
+    Config.poolLog ? Log.print("pool total.: " + pool.totalCount + ", idle.: " + pool.idleCount + ", waiting.: " + pool.waitingCount) : null;
     client.release();
     Config.queryLog ? Log.print(query.text) : null;
     Config.queryParametersLog ? Log.print(query.values) : null;
-    Config.queryDetails
-      ? Log.print(result.command + " - " + result.rowCount + " row(s)")
-      : null;
+    Config.queryDetails ? Log.print(result.command + " - " + result.rowCount + " row(s)") : null;
     Config.queryResultLog ? Log.print(result.rows) : null;
 
     const rm = new RetornoModel();
@@ -126,22 +79,11 @@ export class Repository {
   static async DbQueryObjectEncapsulated(query: { text: string; values: any }) {
     let client = await pool.connect();
     const result = await client.query(query);
-    Config.poolLog
-      ? Log.print(
-          "pool total.: " +
-            pool.totalCount +
-            ", idle.: " +
-            pool.idleCount +
-            ", waiting.: " +
-            pool.waitingCount
-        )
-      : null;
+    Config.poolLog ? Log.print("pool total.: " + pool.totalCount + ", idle.: " + pool.idleCount + ", waiting.: " + pool.waitingCount) : null;
     client.release();
     Config.queryLog ? Log.print(query.text) : null;
     Config.queryParametersLog ? Log.print(query.values) : null;
-    Config.queryDetails
-      ? Log.print(result.command + " - " + result.rowCount + " row(s)")
-      : null;
+    Config.queryDetails ? Log.print(result.command + " - " + result.rowCount + " row(s)") : null;
     Config.queryResultLog ? Log.print(result.rows) : null;
 
     const rm = new RetornoModel();

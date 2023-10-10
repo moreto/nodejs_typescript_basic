@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import Config from "../configs/config.json";
 import { Log } from "../commons/log";
-import { RootRepository } from "../repositories/root_repository";
+import { RootRepository } from "../repositories/rootRepository";
 
 class RootController {
   constructor() {}

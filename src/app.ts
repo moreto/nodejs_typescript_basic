@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import "express-async-errors";
 import { router } from "./routes";
-import { AppError } from "./errors/app_error";
+import { AppError } from "./errors/appError";
 
 const app = express(); // Iniciando instância do microframework Express
 app.use(express.json()); // Habilitar o uso de formato JSON
